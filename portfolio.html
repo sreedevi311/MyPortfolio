@@ -4,80 +4,378 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyPortfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        h3{
-            display: inline-block;
-            margin-right: 20px;
+        body{
+            font-size: 16px;
+            padding: 0px;
+            margin: 0px;
         }
-        p{
-            font-size: 17px;
+        .nav-bar{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color:rgb(22, 22, 22);
+            color: white;
+            height: 70px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+        }
+        .left-section{
+            padding: 25px;
+            text-align: center;
+            margin-left: 40px;
+        }
+        .right-section{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .right-section div{
+            width:100px;
+            text-align: center;
+            padding: 25px;
+        }
+        .right-section a{
+            text-decoration: none;
+            color: white;
+        }
+        .right-section div:active{
+            border-bottom: 5px solid green;
+        }
+        .right-section div:hover{
+            color: green;
+        }
+        #home,#about{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+            background-color: black;
+            color: white;
+        }
+        .home-left,.home-right{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 150px;
+            width: 70%;
+        }
+        .home-right img{
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 20px green;
+        }
+        .button{
+            width: 90px;
+            height: 40px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-right: 20px;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .button:hover{
+            opacity: 0.8;
+            transform: scale(1.12);
+        }
+        .button:active{
+            box-shadow: 0px 0px 8px #b4b0b0;
+        }
+        #about{
+            background-color: rgb(8,8,8);
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 80px;
+        }
+        .about-div{
+            text-align: justify;
+            font-size: 20px;
+            padding: 50px;
+        }
+        #skills{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: black;
+            height: 700px;
+            color: white;
+            gap: 15px;
+            padding: 90px;
+        }
+        #projects{
+            background-color: rgb(8, 8, 8);
+            height: 600px;
+            color: white;
+            padding: 50px;
+        }
+        .projects-section{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .project-div{
+            width: 350px;
+            height: 350px;
+            border-radius: 10px;
+            background: rgb(8, 8, 8);
+            box-shadow: 0px 0px 10px #fff;
+        }
+        .project-icons{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        #achievements{
+            background-color: black;
+            height: 700px;
+            color: white;
+            padding: 60px;
+        }
+        .achievements-section img{
+            width: 350px;
+        }
+        .achievements-section-middle-div{
+            display: flex;
+            align-items: center;
+        }
+        .achievements-section img:hover{
+            transform: scale(1.1);
+            transition: 0.1ms ease-out;
+        }
+        #contact{
+            background-color: rgb(8,8,8);
+            height: 700px;
+            color: white;
+            padding: 60px;
+        }
+        .contact-div-under-para{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .contact-div-under-para-left-section{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            margin-right: 120px;
+        }
+        .contact-icons{
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            padding-top: 30px;
+        }
+        form label{
+            font-size: 20px;
+            color: green;
+        }
+        .form-inputs{
+            width: 350px;
+            height: 25px;
+            background-color: rgb(8,8,8);
+            color: white;
+            box-shadow: 0px 0px 5px #fff;
+            border-radius: 10px;
+            padding:10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .copyright{
+            background-color:black;
+            height: 50px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <h3>About</h3>
-            <h3>Skills </h3>
-            <h3>Projects</h3>
-            <h3>Achievements</h3>
-            <h3>contactMe</h3>
+        <nav class="nav-bar">
+            <div class="left-section">Portfolio.</div>
+            <div class="right-section">
+                <a href="#home"><div>Home</div></a>
+                <a href="#about"><div>About</div></a>
+                <a href="#skills"><div>Skills </div></a>
+                <a href="#projects"><div>Projects</div></a>
+                <a href="#achievements"><div>Achievements</div></a>
+                <a href="#contact"><div>contactMe</div></a>
+            </div>
         </nav>
     </header>
     <main>
-        <h1>About Me:</h1>
-        <p>Hi! This is <strong>Sreedevi!</strong></p>
-        <h3>Front-end Developer || DSA Enthusiast</h3>
-        <p><b>CSE Undergraduate || 2k27</b></p>
+        <div style="padding-top: 70px;"></div>
+        <div id="home">
+            <div class="home-left">
+                <div style="font-size: 60px;">Hi, This is <span style="color: green;">Sreedevi!</span></div>
+                <div style="font-size: 25px;">Front-end Developer | DSA Enthusiast</div>
+                <div><a href="#about"><button class="button">About Me</button></a><a href="#contact"><button class="button">Contact Me</button></a></div>
+            </div>
+            <div class="home-right" style="width: 20%; padding: 140px;"><img src="myphoto1.jpg" alt=""></div>
+        </div>
 
-        <h1>Skills:</h1>
-        <p><b>Web Technologies:</b> HTML,CSS,JavaScript,React.</p>
-        <p><b>Programming Languages:</b> C,Java,Python.</p>
-        <p><b>Core Competencies:</b> DSA(java).</p>
-        <p><b>DataBases:</b> Oracle,MySQL.</p>
-        <p><b>Designer Tools:</b> Canva,Figma.</p>
-        <p><b>Developer Tools:</b> Google Collab,VS Code,Github.</p>
+        <div id="about">
+            <p style="color: green;font-size: 50px; padding: 30px;">About:</p>
+            <div class="about-div">
+            I am a highly motivated 2nd year Computer Science student skilled in Front-end Technologies like <span style="color: green;">HTML, CSS, JavaScript, React</span>
+            and Programming Languages like <span style="color: green;">C, Java, Python</span> with good <span style="color: green;">communication skills</span> and <span style="color: green;">leadership qualities</span>, eager to contribute to innovative
+            projects and learn from industry leaders through an internship opportunity.“Highly adaptable and persistent, I never give up easily when 
+            faced with challenges. Even when I lack prior knowledge, I am always open to learning and take initiative to get things done efficiently. 
+            My ability to adjust to new situations and learn quickly allows me to contribute effectively in dynamic environments.”
+            </div>
+        </div>
+
+        <div id="skills">
+            <p style="color: green;font-size: 50px;">Skills:</p>
+            <ul style="list-style-type: disc; margin: 10px;">
+                <li><strong style="color: green;font-size: 30px;">Web Technologies:</strong>
+                    <ul style="list-style-type: circle; margin: 10px; font-size: 20px;">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul style="list-style-type: disc; margin: 10px;">
+                <li><strong style="color: green;font-size: 30px;">Programming Languages:</strong>
+                    <ul style="list-style-type: circle; margin: 10px; font-size: 20px;">
+                        <li>C</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul style="list-style-type: disc; margin: 10px;">
+                <li><strong style="color: green;font-size: 30px;">DataBases:</strong>
+                    <ul style="list-style-type: circle; margin: 10px; font-size: 20px;">
+                        <li>Oracle</li>
+                        <li>MySQL</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul style="list-style-type: disc; margin: 10px;">
+                <li><strong style="color: green;font-size: 30px;">Designer Tools:</strong>
+                    <ul style="list-style-type: circle; margin: 10px; font-size: 20px;">
+                        <li>Canva</li>
+                        <li>Figma</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
         
-        <h1>Projects:</h1>
-        <h2>Amazon Clone:</h2>
-        <p>Developed a fully responsive Amazon Clone Website, leveraging HTML, CSS, JavaScript. In
-            tegrated the functionalities like browsing through the products, search for them, adding them to cart, update and
-             delete cart quantities etc;. Focused on delivering an optimized user experience with intuitive design and seamless
-             navigation. <a href="https://github.com/sreedevi311/Amazon_Clone/blob/main">Project Link</a></p>
-        <h2>Tic-Tac-Toe:</h2>
-        <p> Developed a classic Tic-Tac-Toe Game using React, featuring continuous player-controlled
-            movement and a visually appealing design. Implemented real-time user interaction and potential for future enhance
-           ments like dynamic difficulty levels. <a href="https://github.com/sreedevi311/Amazon_Clone/blob/main">Project Link</a></p>
+        <div id="projects">
+            <p style="color: green;font-size: 50px;">Projects:</p>
+            <section class="projects-section">
+                <div class="project-div">
+                    <div style="color: green;text-align: center;font-size: 20px;padding: 20px;">Amazon Clone:</div>
+                    <div class="project-icons">
+                        <a href="#" style="margin: 0 10px; background-color: green; color: white; padding: 15px; border-radius: 50%; display: inline-block;">
+                            <i class="fas fa-shopping-cart fa-lg"></i>
+                        </a>
+                    </div>
+                    <div style="padding: 30px;text-align: justify;">Developed a fully responsive Amazon Clone Website, leveraging <span style="color: green;">HTML,CSS,JavaScript.</span> In
+                        tegrated the functionalities like browsing through the products, search for them, adding them to cart, update and
+                        delete cart quantities etc;. Focused on delivering an optimized user experience with intuitive design and seamless
+                        navigation.</div>
+                </div>
+                <div class="project-div">
+                    <div style="color: green;text-align: center;font-size: 20px;padding: 20px;">Tic-Tac-Toe:</div>
+                    <div class="project-icons">
+                        <a href="#" style="margin: 0 10px; background-color: green; color: white; padding: 15px; border-radius: 50%; display: inline-block;">
+                        <i class="fas fa-gamepad fa-lg"></i>
+                        </a>
+                    </div>
+                    <div style="padding: 30px;text-align: justify;"> Developed a classic Tic-Tac-Toe Game using <span style="color: green;">React</span>, featuring the continuous player-controlled
+                    movement and a visually appealing design. Implemented real-time user interaction and potential for future enhance
+                    ments like dynamic difficulty levels.</div>
+                </div>
+                <div class="project-div">
+                    <div style="color: green;text-align: center;font-size: 20px;padding: 20px;">Podcast Player:</div>
+                    <div class="project-icons">
+                        <a href="#" style="margin: 0 10px; background-color: green; color: white; padding: 15px; border-radius: 50%; display: inline-block;">
+                            <i class="fas fa-microphone fa-lg"></i>
+                        </a>
+                    </div>
+                    <div style="padding: 30px;text-align: justify;">Developed a fully responsive podcast player Website, leveraging <span style="color: green;">HTML,CSS,JavaScript.</span> In
+                        tegrated the functionalities like browsing through the podcasts, search for them, adding them to library, explore
+                        new categories of podcasts etc;. Focused on delivering an optimized user experience with intuitive design and seamless
+                        navigation.</div>
+                </div>
+            </section>
+            <section class="projects-section">
+                <a href="https://github.com/sreedevi311/Amazon_Clone/blob/main"><button class="button">view</button></a>
+                <a href="https://github.com/sreedevi311/Tic-Tac-Toe/blob/main"><button class="button">view</button></a>
+                <a href="https://github.com/sreedevi311/Amazon_Clone/blob/main"><button class="button">view</button></a>
+            </section>
+        </div>
 
-        <h1>Achievements:</h1>
-        <ul>
-            <li>Web FullStack Developer(AICTE)<a href="https://www.linkedin.com/in/sai-sreedevi-pulaparthi-7225542a7/">  view certification</a></li>
-            <li>Google AI-ML Virtual Internship(AICTE)<a href="https://www.linkedin.com/in/sai-sreedevi-pulaparthi-7225542a7/">  view certification</a></li>
-            <li>Google cloud Computing Foundation Skills(GOOGLE)<a href="https://www.linkedin.com/in/sai-sreedevi-pulaparthi-7225542a7/">  view certification</a></li>
-            <li>Git and Github(Microsoft)<a href="https://www.linkedin.com/in/sai-sreedevi-pulaparthi-7225542a7/">  view certification</a></li>
-            <li>Python Data Structures(Great Learning Academy)<a href="https://www.linkedin.com/in/sai-sreedevi-pulaparthi-7225542a7/">  view certification</a></li>
-        </ul>
+        <div id="achievements">
+            <p style="color: green;font-size: 50px;">Achievements:</p>
+            <section class="projects-section">
+                <div class="achievements-section"><img src="aicte1.jpg" alt=""></div>
+                <div class="achievements-section achievements-section-middle-div"><img src="aicte12.jpg" alt=""></div>
+                <div class="achievements-section"><img src="aicte2.jpg" alt=""></div>
+            </section>
+            <section class="projects-section" style="font-size: 20px;">
+                <a href="https://www.linkedin.com/in/sai-sreedevi-pulaparthi-7225542a7/">view</a>
+                <a href="https://www.linkedin.com/in/sai-sreedevi-pulaparthi-7225542a7/">view</a>
+                <a href="https://www.linkedin.com/in/sai-sreedevi-pulaparthi-7225542a7/">view</a>
+            </section>
+        </div>
 
-        <h1>Contact Me:</h1>
-        <form action="">
-            <label for="">Name:</label><br>
-            <input type="text" name="" id=""><br>
-            <label for="">E-mail:</label><br>
-            <input type="email" name="" id=""><br>
-            <label for="">Age:</label><br>
-            <input type="number" name="" id=""><br>
-            <label for="Gender:">Gender:</label><br>
-            <input type="radio" name="" id="">
-                <label for="">Male</label><br>
-            <input type="radio" name="" id="">
-                <label for="">Female</label><br>
-            <label for="">Contact no:</label><br>
-            <input type="text" name="" id=""><br>
-            <label for="">Leave a message:</label><br>
-            <textarea name="" id=""></textarea><br>
-            <input type="submit" name="" id=""><br>
-        </form>
+        <div id="contact">
+            <p style="color: green;font-size: 50px;">Contact Me:</p>
+            <div class="contact-div-under-para">
+                <div class="contact-div-under-para-left-section">
+                    <img src="profile-icon.jpg" alt="" style="width: 300px; border-radius: 50%;">
+                    <div class="contact-icons" style="margin-top: 20px; text-align: center;">
+                        <a href="mailto:sreedevipulaparthi31@gmail.com" target="_blank" style="margin: 0 10px; background-color: green; color: white; padding: 13px; border-radius: 50%; display: inline-block;">
+                            <i class="fas fa-envelope fa-2x"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sai-sreedevi-pulaparthi-7225542a7/" target="_blank" style="margin: 0 10px; background-color: green; color: white; padding: 15px; border-radius: 50%; display: inline-block;">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
+                        <a href="https://wa.me/9493988292" target="_blank" style="margin: 0 10px; background-color: green; color: white; padding: 15px; border-radius: 50%; display: inline-block;">
+                            <i class="fab fa-whatsapp fa-2x"></i>
+                        </a>
+                        <a href="tel:9493988292" style="margin: 0 10px; background-color: green; color: white; padding: 12px; border-radius: 50%; display: inline-block;">
+                            <i class="fas fa-phone fa-2x"></i>
+                        </a>
+                    </div>
+
+                </div>
+                <div>
+                    <form action="">
+                        <label for="">Name:</label><br>
+                        <input type="text" name="" id="" class="form-inputs"><br>
+                        <label for="">Contact no:</label><br>
+                        <input type="text" name="" id="" class="form-inputs"><br>
+                        <label for="">E-mail:</label><br>
+                        <input type="email" name="" id="" class="form-inputs"><br>
+                        <label for="">Leave a message:</label><br>
+                        <textarea name="" id="" class="form-inputs" style="height: 100px;"></textarea><br>
+                        <input type="submit" name="" id="" class="button"><br>
+                    </form>
+                </div>
+            </div>
+        </div>
     </main>
-    <footer>&copy; Copyright 2025</footer>
+    <footer class="copyright"><span style="color: green;">Sreedevi portfolio. </span> &copy; Copyright 2025</footer>
 </body>
 </html>
